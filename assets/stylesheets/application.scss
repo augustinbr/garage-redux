@@ -1,4 +1,88 @@
 .app {
   margin-top: 20px;
-  margin-bottom: 20px;
+	margin-bottom: 20px;
+	display: grid;
+	grid-template-columns: 25% 75%;
+	grid-template-areas: 
+	"left right";
+	height: 80vh;
+}
+
+.right {
+	grid-area: right;
+}
+
+.left {
+	grid-area: left;
+	width: 100%;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	img {
+		width: 111px;
+		border-radius: 50%;
+		border: solid 1px white;
+		position: relative;
+		bottom: -168px;
+		left: 87px;
+	}
+}
+
+.top {
+	grid-area: top;
+	background-image: url('https://res.cloudinary.com/dkpy2yoeq/image/upload/v1587471612/garage-redux/garage-background_scp3cq.jpg');
+	background-size: cover;
+	height: 220px;
+	width: 100%;
+}
+
+.bottom {
+	grid-area: bottom;
+	background-color: white;
+}
+
+
+
+.description {
+	padding: 20px;
+	margin-top: 36px;
+}
+
+.new-car {
+	color: white;
+	background: black;
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 5px 10px;
+	margin-left: 77px;
+	margin-top: 24px;
+	&:hover {
+		color: black;
+		background-color: white;
+		border: 2px solid black;
+	}
+}
+
+.car {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	grid-template-areas: "left right";
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	margin: 10px;
+	width: 80%;
+  height: 97px;
+	img {
+		height: 100%;
+		width: 100%;
+	}
+}
+
+.car__left {
+	grid-area: left;
+}
+
+.car__right {
+	grid-area: right;
+}
+
+.car__description {
+	margin-left: 35px;
 }

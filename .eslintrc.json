@@ -6,7 +6,11 @@
     "quotes": "off",
     "react/prop-types": 0,
     "arrow-body-style": 0,
-    "space-before-function-paren": 0
+		"space-before-function-paren": 0,
+		"no-tabs": 0,
+		"indent": ["error", "tab"],
+		"react/jsx-indent": [2, "tab"],
+		"react/prefer-stateless-function": "off"
   },
   "env": {
     "browser": true
