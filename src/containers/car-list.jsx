@@ -6,11 +6,11 @@ import { connect } from 'react-redux';
 import Car from '../components/car';
 
 // import action to trigger with dispatch:
-import fetchCars from '../actions/index';
+import { fetchCars, setCars } from '../actions/index';
 
 class CarList extends Component {
 	componentWillMount() {
-		console.log(this.props.fetchCars());
+		this.props.fetchCars(this.props.garage);
 	}
 
 	render() {
@@ -28,7 +28,8 @@ class CarList extends Component {
 
 function mapStateToProps(state) {
 	return {
-		cars: state.cars
+		cars: state.cars,
+		garage: state.garage
 	}
 }
 

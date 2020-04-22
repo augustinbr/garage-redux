@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 class Garage extends Component {
 	componentWillMount() {
@@ -20,6 +21,9 @@ class Garage extends Component {
 						<p>Our garage is the best; with our experience, you can expect the
 							best expertise you will be not sad !</p>
 						<button type="button" className="new-car">Add a car</button>
+						<Link className="btn btn-primary btn-cta" to="/cars/new">
+							Let's write a post!
+						</Link>
 					</div>
 				</div>			
 			</div>

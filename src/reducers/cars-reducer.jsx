@@ -1,4 +1,4 @@
-import { CARS, FETCH_CARS } from '../actions/index';
+import { CARS, FETCH_CARS } from '../actions/index';
 
 
 export default function(state, action) {
@@ -8,7 +8,7 @@ export default function(state, action) {
 	}
 	case FETCH_CARS: {
 		console.log(action.payload)
-		return action.payload;
+		return [action.payload];
 	}
 	default:
 		return state;

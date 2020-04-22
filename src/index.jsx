@@ -6,15 +6,16 @@ import reduxPromise from 'redux-promise';
 import logger from 'redux-logger';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { createHistory as history } from 'history';
+import { reducer as formReducer } from 'redux-form';
 
 import '../assets/stylesheets/application.scss';
 
 // import component:
 import App from './components/app';
+import CarNew from './containers/car-new';
 
 //import reducers:
 import carsReducer from './reducers/cars-reducer';
-
 
 const garageName = prompt("What is your garage?") || `garage${Math.floor(10 + (Math.random() * 90))}`;
 const initialState = {
@@ -30,8 +31,9 @@ const initialState = {
 const identityReducer = (state = null) => state;
 
 const reducers = combineReducers({
-  garage: (state = null, action) => state,
-  cars: identityReducer
+	garage: (state = null, action) => state,
+	cars: identityReducer,
+	form: formReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
@@ -42,6 +44,9 @@ ReactDOM.render(
 		<Router history={history}>
 			<Switch>
 				<Route path="/" component={App} />
+				<Route path="/cars/new" >
+					<CarNew />
+				</Route>
 			</Switch>
 		</Router>
 	</Provider>,
